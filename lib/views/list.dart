@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/constants/constant.dart';
+import 'package:todo/views/create.dart';
 import 'package:todo/views/view.dart';
 
 class TodoList extends StatelessWidget {
@@ -11,9 +12,13 @@ class TodoList extends StatelessWidget {
       appBar: AppBar(
         title: Text('Note List'),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 35.0),
-            child: GestureDetector(
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CreateTodo()));
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(right: 30.0),
               child: Icon(Icons.add),
             ),
           )
